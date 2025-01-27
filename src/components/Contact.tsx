@@ -37,46 +37,58 @@ useEffect(() => {
     }
   }, [loading]);
 
-  return (
-    <section id="contact" className="py-16 bg-white">
-      <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-bold text-gray-800">Entre em Contato</h2>
-        <p className="mt-4 text-gray-600">
-          Ficaremos felizes em ajudar! Preencha o formulário abaixo.
-        </p>
-        <form className="mt-8 max-w-md mx-auto space-y-4" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Seu Nome"
-            className={`w-full p-3 border border-gray-300 rounded-md ${loading ? 'opacity-50 cursor-wait' : ''}`}
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
-            type="email"
-            placeholder="Seu Email"
-            className={`w-full p-3 border border-gray-300 rounded-md ${loading ? 'opacity-50 cursor-wait' : ''}`}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <textarea
-            placeholder="Sua Mensagem"
-            className={`w-full p-3 border border-gray-300 rounded-md ${loading ? 'opacity-50 cursor-wait' : ''}`}
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
-          <button
-            type="submit"
-            className={`w-full p-3 bg-blue-500 text-white rounded-md ${loading ? 'opacity-50 cursor-wait' : ''}`}
-            disabled={loading}
-          >
-            {loading ? 'Enviando...' : 'Enviar'}
-          </button>
-        </form>
-        {status && <p className="mt-4 text-gray-600">{status}</p>}
-      </div>
-    </section>
-  );
+    return (
+      <section id="contact" className="py-20 bg-slate-950 text-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12">Entre em Contato</h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-2xl font-bold mb-6">Informações de Contato</h3>
+              <div className="space-y-4">
+                <p className="flex items-center hover:underline" onClick={() => window.open('https://maps.app.goo.gl/HmhzJxvBcQoQKvMA9', '_blank')} style={{ cursor: 'pointer' }}>
+                  <span className="mr-2">📍</span>
+                  Endereço: Rua Dorvalina Pereira, 30, Araquari/SC
+                </p>
+                <p className="flex items-center hover:underline" onClick={() => window.open('https://api.whatsapp.com/send/?phone=5547997137923&text=Ol%C3%A1%2C+vim+pelo+Site+e+gostaria+de+um+or%C3%A7amento.&type=phone_number&app_absent=0', '_blank')} style={{ cursor: 'pointer' }}>
+                  <span className="mr-2">📞</span>
+                  Telefone: 47 99713-7923
+                </p>
+                <p className="flex items-center hover:underline" onClick={() => window.open('mailto:', '_blank')} style={{ cursor: 'pointer' }}>
+                  <span className="mr-2">✉️</span>
+                  Email: contato@metalmartinsgalpoes.com.br
+                </p>
+              </div>
+            </div>
+            <form className="space-y-4">
+              <div>
+                <input
+                  type="text"
+                  placeholder="Nome"
+                  className="w-full p-3 rounded-lg bg-slate-800 border border-slate-700 focus:border-blue-500 focus:outline-none"
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="w-full p-3 rounded-lg bg-slate-800 border border-slate-700 focus:border-blue-500 focus:outline-none"
+                />
+              </div>
+              <div>
+                <textarea
+                  placeholder="Mensagem"
+                  rows={4}
+                  className="w-full p-3 rounded-lg bg-slate-800 border border-slate-700 focus:border-blue-500 focus:outline-none"
+                ></textarea>
+              </div>
+              <button className="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                Enviar Mensagem
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    );
 };
 
 export default Contact;

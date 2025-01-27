@@ -3,7 +3,7 @@ export default function Hero() {
       <section
         className="flex items-center justify-center h-screen bg-cover bg-center text-white"
         style={{
-          backgroundImage: 'url(/foto.jpg)', // Substitua "minha-foto.jpg" pelo nome da sua imagem
+          backgroundImage: 'url(https://placehold.co/600x400/000000/3C3C3C/svg)', // Substitua "minha-foto.jpg" pelo nome da sua imagem
         }}
       >
         <div className="text-center">
