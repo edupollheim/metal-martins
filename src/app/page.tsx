@@ -12,7 +12,7 @@ import Careers from "@/components/TrabalheConosco";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-cover bg-center" style={{ backgroundImage: "url('/galpao-fundo.jpg')", backgroundAttachment: 'fixed' }}>
+    <div className="min-h-screen flex flex-col bg-cover bg-center">
       <div>
         <Header />
         <main className="flex-grow">

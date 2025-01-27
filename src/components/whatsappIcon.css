@@ -9,7 +9,7 @@
     width: 4rem; /* Largura para tamanho padrão */
     height: 4rem; /* Altura para tamanho padrão */
     border-radius: 50%; /* Botão redondo */
-    background: transparent; /* Fundo inicial transparente */
+    background: white; /* Fundo inicial transparente */
     border: 2px solid var(--color); /* Contorno inicial */
     display: flex;
     align-items: center;

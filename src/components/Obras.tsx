@@ -5,17 +5,17 @@ export default function Works() {
       {
         title: "Projeto 1",
         description: "Galpão Industrial",
-        image: "https://placehold.co/600x400/0a0a0a/3C3C3C/svg"
+        image: "/Fotos/Projeto1.jpeg"
       },
       {
         title: "Projeto 2",
         description: "Estrutura Metálica",
-        image: "https://placehold.co/600x400/0a0a0a/3C3C3C/svg"
+        image: "/Fotos/Projeto2.jpeg"
       },
       {
         title: "Projeto 3",
         description: "Cobertura",
-        image: "https://placehold.co/600x400/0a0a0a/3C3C3C/svg"
+        image: "/Fotos/Projeto6.jpg"
       }
     ];
   
@@ -25,7 +25,7 @@ export default function Works() {
           <h2 className="text-4xl font-bold text-center mb-12 text-slate-900">Nossas Obras</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {works.map((work, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg">
+              <div key={index} className="group relative overflow-hidden rounded-lg shadow-xl">
                 <Image
                   src={work.image}
                   alt={work.title}

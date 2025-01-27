@@ -19,7 +19,7 @@ export default function Header() {
     <header className="w-full bg-slate-950">
       <div className="container mx-auto flex justify-between items-center p-4">
         <Image 
-          src="/logo sem nome.png" 
+          src="/Fotos/logo sem nome.png" 
           alt="Logo da Empresa" 
           width={300}
           height={300}
