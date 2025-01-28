@@ -10,9 +10,9 @@ const WhatsAppIcon = () => {
     <Image
       src="/SVG/whatsapp.svg"
       alt="Ícone decorativo"
-      className="whatsapp-icon fixed bottom-4 right-4 w-16 h-16 md:w-16 md:h-16 cursor-pointer z-50"
-      width={16}
-      height={16}
+      className="whatsapp-icon fixed bottom-4 right-4 cursor-pointer z-50"
+      width={20}
+      height={20}
       onClick={ContactWhatsapp}
     />
   );

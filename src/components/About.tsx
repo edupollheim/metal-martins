@@ -40,9 +40,9 @@ export default function About() {
                 <p className="text-gray-600">Clientes Satisfeitos</p>
               </div>
             </div>
-            <button className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105">
+            {/* <button className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105">
               Saiba Mais
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

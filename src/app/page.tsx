@@ -9,6 +9,7 @@ import Location from "@/components/Location";
 import WhatsAppIcon from "@/components/whatsappIcon";
 import Works from "@/components/Obras";
 import Careers from "@/components/TrabalheConosco";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <Header />
         <main className="flex-grow">
           {/* <WhatsAppIcon /> */}
+          <SchemaMarkup />
           <WhatsAppIcon />
           <Hero />
           <About />

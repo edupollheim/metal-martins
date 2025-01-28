@@ -6,8 +6,8 @@
     position: fixed; /* Permite posicionamento fixo na tela */
     bottom: 1rem; /* Ajusta a posição em dispositivos móveis */
     right: 1rem; /* Ajusta a posição em dispositivos móveis */
-    width: 4rem; /* Largura para tamanho padrão */
-    height: 4rem; /* Altura para tamanho padrão */
+    width: 4.5rem; /* Largura para tamanho padrão */
+    height: 4.5rem; /* Altura para tamanho padrão */
     border-radius: 50%; /* Botão redondo */
     background: white; /* Fundo inicial transparente */
     border: 2px solid var(--color); /* Contorno inicial */
