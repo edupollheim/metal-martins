@@ -18,7 +18,6 @@ export default function Home() {
         <Header />
         <main className="flex-grow">
           {/* <WhatsAppIcon /> */}
-          <SchemaMarkup />
           <WhatsAppIcon />
           <Hero />
           <About />
