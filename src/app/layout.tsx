@@ -123,6 +123,7 @@ export default function RootLayout({
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "q0qfruvjif");`}
         </Script>
+        <GoogleAnalytics />
         {children}
       </body>
     </html>
