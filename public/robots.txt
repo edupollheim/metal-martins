@@ -1,0 +1,15 @@
+# robots.txt para https://metalmartinsgalpoes.com.br/
+# Criado em 29/01/2025
+
+# Regras para todos os robôs
+User-agent: *
+Allow: /                           # Permite o acesso à raiz do site
+Allow: /public/SVG/                # Permite acesso à pasta de SVGs
+Allow: /public/Fotos/              # Permite acesso à pasta de Fotos
+Allow: /public/Videos/             # Permite acesso à pasta de Vídeos
+Disallow: /private/                # Bloqueia diretórios privados (se houver)
+Disallow: /tmp/                    # Bloqueia pasta temporária (se houver)
+Disallow: /config/                 # Bloqueia pasta de configurações (se houver)
+
+# Localização do sitemap
+Sitemap: https://metalmartinsgalpoes.com.br/sitemap.xml
