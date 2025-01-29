@@ -129,10 +129,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <noscript>
-          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MZZ8BBXG"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe>
-        </noscript>
+      <noscript>
+        <iframe 
+          src="https://www.googletagmanager.com/ns.html?id=GTM-MZZ8BBXG"
+          height="0" 
+          width="0" 
+          style={{
+            display: 'none',
+            visibility: 'hidden'
+          }}
+        />
+      </noscript>
         <Script id="clarity-script" strategy="afterInteractive">
           {`    (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
