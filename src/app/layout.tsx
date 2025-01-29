@@ -4,6 +4,7 @@ import "./globals.css";
 import Script from "next/script";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import GoogleTagManager from "@/components/GoogleTagManager";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -113,10 +114,15 @@ export default function RootLayout({
     <html lang="pt-br">
       <head>
         <SchemaMarkup />
+        <GoogleTagManager />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <noscript>
+          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MZZ8BBXG"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
         <Script id="clarity-script" strategy="afterInteractive">
           {`    (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -125,6 +131,7 @@ export default function RootLayout({
     })(window, document, "clarity", "script", "q0qfruvjif");`}
         </Script>
         <GoogleAnalytics />
+        
         {children}
       </body>
     </html>
