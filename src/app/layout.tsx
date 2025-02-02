@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   },
   description: "Líderes em construção de galpões pré-moldados e estruturas metálicas de alta performance para indústria, comércio e logística. Projetos personalizados, certificação ISO 9001 e atendimento em todo o Brasil. Orçamento rápido via WhatsApp!",
   keywords: [
+    // Keywords originais de produtos/serviços
     "galpões pré-moldados",
     "estruturas metálicas industriais",
     "construção de galpões logísticos",
@@ -31,6 +32,62 @@ export const metadata: Metadata = {
     "montagem de estruturas metálicas",
     "soluções em construção pré-moldada",
     "orçamento de galpão industrial",
+    
+    // Keywords específicas de localização
+    "galpão industrial Itinga",
+    "galpão pré-moldado Araquari",
+    "estrutura metálica Joinville",
+    "galpão industrial São Francisco do Sul",
+    "construção de galpão Jaraguá do Sul",
+    "estrutura metálica Itapoá",
+    "galpão industrial Barra Velha",
+    "construção de galpão Guaramirim",
+    "estrutura metálica São João do Itaperiú",
+    "galpão industrial Balneário Barra do Sul",
+    "galpão pré-moldado Santa Catarina",
+    "estrutura metálica região norte SC",
+    "galpão industrial litoral norte SC",
+    "construtora de galpões Itinga Araquari",
+    "estruturas metálicas Vale do Itapocu",
+    
+    // Keywords regionais com serviços
+    "construção de galpões em Joinville",
+    "estruturas metálicas em Araquari",
+    "galpão industrial em São Francisco do Sul",
+    "construtora de galpões Santa Catarina",
+    "estrutura metálica norte catarinense",
+    "galpão pré-moldado região de Joinville",
+    "construtora industrial Araquari",
+    "galpões industriais litoral SC",
+    "estruturas metálicas Vale do Itajaí",
+    
+    // Keywords nacionais
+    "construtora de galpões Brasil",
+    "estruturas metálicas industriais Brasil",
+    "galpão pré-moldado nacional",
+    "construção industrial todo Brasil",
+    "projeto de galpão nacional",
+    "estrutura metálica entrega nacional",
+    
+    // Combinações de serviços e características locais
+    "galpão para indústria automotiva Araquari",
+    "estrutura metálica para porto São Francisco",
+    "galpão logístico BR-101",
+    "estrutura metálica área industrial Joinville",
+    "galpão para indústria naval São Francisco",
+    "estrutura metálica polo industrial Araquari",
+    "galpão para centro de distribuição SC",
+    "construção industrial parque Joinville Norte",
+    
+    // Keywords comerciais e específicas
+    "orçamento galpão industrial Araquari",
+    "projeto estrutura metálica Joinville",
+    "construção galpão São Francisco do Sul",
+    "preço galpão pré-moldado Santa Catarina",
+    "construtor de galpão região norte SC",
+    "especialista em estrutura metálica Araquari",
+    "construção industrial Itinga",
+    "galpão comercial Joinville"
   ],
   authors: [{ name: "Metal Martins Construtora", url: "https://metalmartinsgalpoes.com.br" }],
   creator: "Metal Martins Construtora",
