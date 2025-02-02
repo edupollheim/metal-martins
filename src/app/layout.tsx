@@ -4,7 +4,6 @@ import "./globals.css";
 import Script from "next/script";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
-import GoogleTagManager from "@/components/GoogleTagManager";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
