@@ -49,7 +49,7 @@ useEffect(() => {
                   <span className="mr-2">📍</span>
                   Endereço: Rua Dorvalina Pereira, 30, Araquari/SC
                 </p>
-                <p className="flex items-center hover:underline" onClick={() => window.open('https://api.whatsapp.com/send/?phone=5547997137923&text=Ol%C3%A1%2C+vim+pelo+Site+e+gostaria+de+um+or%C3%A7amento.&type=phone_number&app_absent=0', '_blank')} style={{ cursor: 'pointer' }}>
+                <p className="flex items-center hover:underline" onClick={() => window.open('https://api.whatsapp.com/send/?phone=5547997137923&text=Ol%C3%A1%2C+vim+pelo+Site+e+gostaria+de+um+or%C3%A7amento.', '_blank')} style={{ cursor: 'pointer' }}>
                   <span className="mr-2">📞</span>
                   Telefone: 47 99713-7923
                 </p>
