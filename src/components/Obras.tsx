@@ -5,16 +5,19 @@ export default function Works() {
     {
       title: "Projeto 1",
       description: "Galpão Industrial",
+      local: "São Paulo/SP",
       image: "/Fotos/Projeto1.jpeg"
     },
     {
       title: "Projeto 2",
       description: "Estrutura Metálica",
+      local: "Joinville/SC",
       image: "/Fotos/Projeto2.jpeg"
     },
     {
       title: "Projeto 3",
       description: "Cobertura",
+      local: "Curitiba/PR",
       image: "/Fotos/Projeto6.jpg"
     }
   ];
@@ -35,6 +38,7 @@ export default function Works() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                 <div className="absolute bottom-0 p-6 text-white">
                   <h3 className="text-xl font-bold">{work.title}</h3>
+                  <p className="text-sm">📍{work.local}</p>
                   <p>{work.description}</p>
                 </div>
               </div>
