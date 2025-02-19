@@ -4,6 +4,7 @@ import "./globals.css";
 import Script from "next/script";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import Header from "@/components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -204,7 +205,7 @@ export default function RootLayout({
     })(window, document, "clarity", "script", "q0qfruvjif");`}
         </Script>
         <GoogleAnalytics />
-        
+        <Header />
         {children}
       </body>
     </html>

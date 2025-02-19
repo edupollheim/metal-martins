@@ -3,22 +3,39 @@ import Image from "next/image";
 export default function Works() {
   const works = [
     {
-      title: "Projeto 1",
-      description: "Galpão Industrial",
-      local: "São Paulo/SP",
-      image: "/Fotos/Projeto1.jpeg"
+      "title": "Galpão Pré-Moldado",
+      "description": "600m² com 9m de altura, cobertura metálica.",
+      "local": "Araquari/SC",
+      "image": "/Fotos/Araquari-SC/Araquari (2).webp",
+      "link": "Araquari-SC"
     },
     {
-      title: "Projeto 2",
-      description: "Estrutura Metálica",
-      local: "Joinville/SC",
-      image: "/Fotos/Projeto2.jpeg"
+      "title": "Galpão Industrial",
+      "description": "Área de 2.400m².",
+      "local": "Joinville/SC",
+      "image": "/Fotos/Joinville-SC/Joinville (2).webp",
+      "link": "Joinville-SC"
     },
     {
-      title: "Projeto 3",
-      description: "Cobertura",
-      local: "Curitiba/PR",
-      image: "/Fotos/Projeto6.jpg"
+      "title": "Galpão com Estrutura para Ponte Rolante",
+      "description": "875m², vão livre de 25m, suporte para 18 mil kg.",
+      "local": "São Francisco do Sul/SC",
+      "image": "/Fotos/Sao-Francisco-do-Sul-SC/SFS (3).webp",
+      "link": "Sao-Francisco-do-Sul-SC"
+    },
+    {
+      "title": "Galpão Misto",
+      "description": "Pé direito de 10m, treliça com vão livre de 32m.",
+      "local": "São Francisco do Sul/SC",
+      "image": "/Fotos/Sao-Francisco-do-Sul-SC/SFS (2).webp",
+      "link": "Sao-Francisco-do-Sul-SC"
+    },
+    {
+      "title": "Galpão Metálico",
+      "description": "8.100m², 12m de altura.",
+      "local": "Miritituba/PA",
+      "image": "/Fotos/Miritituba-PA/Pará (3).webp",
+      "link": "Miritituba-PA"
     }
   ];
   return (
@@ -27,7 +44,7 @@ export default function Works() {
         <h2 className="text-4xl font-bold text-center mb-12 text-slate-900">Nossas Obras</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {works.map((work, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-lg shadow-xl">
+            <div key={index} className="group relative overflow-hidden rounded-lg shadow-xl cursor-pointer" onClick={() => window.location.href = "/view/" + work.link}>
               <Image
                 src={work.image}
                 alt={work.title}
