@@ -7,13 +7,13 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'Quem Somos' },
-    { href: '#contact', label: 'Contato' },
-    { href: '#solutions', label: 'Soluções' },
-    { href: '#location', label: 'Onde Estamos' },
-    { href: '#obras', label: 'Obras' },
-    { href: '#trabalhe-conosco', label: 'Trabalhe Conosco' },
+    { href: '/#home', label: 'Home' },
+    { href: '/#about', label: 'Quem Somos' },
+    { href: '/#contact', label: 'Contato' },
+    { href: '/#solutions', label: 'Soluções' },
+    { href: '/#location', label: 'Onde Estamos' },
+    { href: '/#obras', label: 'Obras' },
+    { href: '/#trabalhe-conosco', label: 'Trabalhe Conosco' },
   ];
 
   return (

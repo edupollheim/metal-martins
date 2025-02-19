@@ -20,15 +20,8 @@ export default function About() {
             />
           </div>
           <div>
-            <p className="text-lg text-gray-700 mb-6">
-              A Metal Martins é uma empresa especializada em construções metálicas,
-              com mais de [X] anos de experiência no mercado. Nossa missão é fornecer
-              soluções estruturais de alta qualidade, combinando inovação, segurança
-              e eficiência em cada projeto.
-            </p>
-            <p className="text-lg text-gray-700 mb-6">
-              Nosso compromisso com a excelência e a satisfação do cliente nos tornou
-              referência no setor de estruturas metálicas e galpões pré-moldados.
+            <p className="text-lg text-gray-700 mb-6 text-justify">
+            A Metal Martins é uma empresa especializada em estruturas metálicas e galpões pré-moldados. Nossa missão é transformar desafios em soluções inovadoras, otimizando cada etapa do projeto para garantir eficiência e qualidade. Oferecendo projetos totalmente personalizados para atender às demandas exclusivas de cada cliente. Nossa equipe se dedica a entender as necessidades de cada projeto, criando soluções sob medida que garantem desempenho, segurança e eficiência.
             </p>
             <div className="grid grid-cols-2 gap-6 mt-8">
               <div className="text-center p-4 bg-slate-50 rounded-lg shadow-sm">

@@ -34,7 +34,7 @@ export default function CidadePage({ params }: PageProps) {
 
     // Filtra apenas arquivos de imagem e vídeo
     arquivos = arquivos.filter((arquivo) =>
-      /\.(jpg|jpeg|png|mp4|webm)$/i.test(arquivo)
+      /\.(jpg|jpeg|png|mp4|webm|webp)$/i.test(arquivo)
     );
 
     // Se não houver arquivos válidos, retorna 404
@@ -53,7 +53,7 @@ export default function CidadePage({ params }: PageProps) {
       </h1>
 
       {/* Carrossel de Imagens e Vídeos */}
-      <Carousel className="w-full max-w-6xl mx-auto">
+      <Carousel className="w-full max-w-6xl mx-auto" opts={{ loop: true }}>
         <CarouselContent>
           {arquivos.map((src, index) => (
             <CarouselItem key={index} className="relative aspect-video">
