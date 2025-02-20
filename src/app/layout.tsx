@@ -170,6 +170,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <head>
+      <meta name="apple-mobile-web-app-title" content="Metal Martins" />
         <SchemaMarkup />
         <Script
         id="gtm-script"
