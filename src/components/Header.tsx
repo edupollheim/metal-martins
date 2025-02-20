@@ -14,6 +14,7 @@ export default function Header() {
     { href: '/#location', label: 'Onde Estamos' },
     { href: '/#obras', label: 'Obras' },
     { href: '/#trabalhe-conosco', label: 'Trabalhe Conosco' },
+    { href: '/galeria', label: 'Galeria' },
   ];
 
   return (
