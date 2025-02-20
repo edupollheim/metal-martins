@@ -34,7 +34,7 @@ export default function Works() {
       "title": "Galpão Metálico",
       "description": "8.100m², 12m de altura.",
       "local": "Miritituba/PA",
-      "image": "/Fotos/Galeria/Miritituba-PA/Pará (3).webp",
+      "image": "/Fotos/Galeria/Miritituba-PA/Para(3).webp",
       "link": "Miritituba-PA"
     }
   ];
