@@ -87,8 +87,8 @@ const FotosGrid: React.FC = () => {
                 <Image
                   src={`/Fotos/Galeria/${pasta}/${foto}`}
                   alt={foto}
-                  width={200}
-                  height={200}
+                  width={1920}
+                  height={1080}
                   style={{ objectFit: 'cover', width: '100%', height: '100%' }}
                 />
               </div>

@@ -1,7 +1,65 @@
 import { useState } from 'react';
+import axios from 'axios';
 
 export default function Careers() {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    resume: null,
+    message: '',
+    agree: false,
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value, type, checked, files } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === 'checkbox' ? checked : type === 'file' ? files[0] : value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setErrorMessage('');
+    setSuccessMessage('');
+
+    const formPayload = new FormData();
+    formPayload.append('name', formData.name);
+    formPayload.append('email', formData.email);
+    formPayload.append('phone', formData.phone);
+    formPayload.append('message', formData.message);
+    formPayload.append('resume', formData.resume);
+
+    try {
+      const response = await axios.post('/api/sendEmail', formPayload, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+
+      setSuccessMessage('Candidatura enviada com sucesso!');
+      setIsExpanded(false); // Fecha o formulário após o envio
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        resume: null,
+        message: '',
+        agree: false,
+      });
+    } catch (error) {
+      setErrorMessage('Erro ao enviar candidatura. Tente novamente.');
+      console.error('Erro ao enviar formulário:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <section id="trabalhe-conosco" className="py-20 bg-slate-50">
@@ -34,7 +92,7 @@ export default function Careers() {
                   Fechar
                 </button>
               </div>
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -42,6 +100,9 @@ export default function Careers() {
                     </label>
                     <input
                       type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
                       required
                       className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     />
@@ -52,6 +113,9 @@ export default function Careers() {
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       required
                       className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     />
@@ -64,6 +128,9 @@ export default function Careers() {
                   </label>
                   <input
                     type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
                     required
                     className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   />
@@ -75,6 +142,8 @@ export default function Careers() {
                   </label>
                   <input
                     type="file"
+                    name="resume"
+                    onChange={handleChange}
                     accept=".pdf"
                     required
                     className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
@@ -89,6 +158,9 @@ export default function Careers() {
                     Por que deseja trabalhar na Metal Martins?*
                   </label>
                   <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     required
                     rows={3}
                     className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
@@ -98,6 +170,9 @@ export default function Careers() {
                 <div className="flex items-start">
                   <input
                     type="checkbox"
+                    name="agree"
+                    checked={formData.agree}
+                    onChange={handleChange}
                     required
                     className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                   />
@@ -106,11 +181,19 @@ export default function Careers() {
                   </p>
                 </div>
 
+                {successMessage && (
+                  <p className="text-green-600 text-sm">{successMessage}</p>
+                )}
+                {errorMessage && (
+                  <p className="text-red-600 text-sm">{errorMessage}</p>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full py-3 px-6 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                  disabled={isLoading}
+                  className="w-full py-3 px-6 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium disabled:opacity-50"
                 >
-                  Enviar Candidatura
+                  {isLoading ? 'Enviando...' : 'Enviar Candidatura'}
                 </button>
               </form>
             </div>

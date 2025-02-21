@@ -36,6 +36,13 @@ export default function Works() {
       "local": "Miritituba/PA",
       "image": "/Fotos/Galeria/Miritituba-PA/Para(3).webp",
       "link": "Miritituba-PA"
+    },
+    {
+      "title": "Obra Executada em Miritituba",
+      "description": "5.400m² com 12m de altura, cobertura metálica galvanizada a fogo.",
+      "local": "Miritituba/PA",
+      "image": "/Fotos/Galeria/Miritituba-PA/Para(4).webp",
+      "link": "Miritituba-PA"
     }
   ];
   return (
