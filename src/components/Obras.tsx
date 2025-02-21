@@ -6,42 +6,42 @@ export default function Works() {
       "title": "Galpão Pré-Moldado",
       "description": "600m² com 9m de altura, cobertura metálica.",
       "local": "Araquari/SC",
-      "image": "/Fotos/Galeria/Araquari-SC/Araquari (2).webp",
+      "image": "/Fotos/Galeria/Araquari-SC/Araquari_2.webp",
       "link": "Araquari-SC"
     },
     {
       "title": "Galpão Industrial",
       "description": "Área de 2.400m².",
       "local": "Joinville/SC",
-      "image": "/Fotos/Galeria/Joinville-SC/Joinville (2).webp",
+      "image": "/Fotos/Galeria/Joinville-SC/Joinville_2.webp",
       "link": "Joinville-SC"
     },
     {
       "title": "Galpão com Estrutura para Ponte Rolante",
       "description": "875m², vão livre de 25m, suporte para 18 mil kg.",
       "local": "São Francisco do Sul/SC",
-      "image": "/Fotos/Galeria/Sao-Francisco-do-Sul-SC/SFS (3).webp",
+      "image": "/Fotos/Galeria/Sao-Francisco-do-Sul-SC/SFS_3.webp",
       "link": "Sao-Francisco-do-Sul-SC"
     },
     {
       "title": "Galpão Misto",
       "description": "Pé direito de 10m, treliça com vão livre de 32m.",
       "local": "São Francisco do Sul/SC",
-      "image": "/Fotos/Galeria/Sao-Francisco-do-Sul-SC/SFS (2).webp",
+      "image": "/Fotos/Galeria/Sao-Francisco-do-Sul-SC/SFS_2.webp",
       "link": "Sao-Francisco-do-Sul-SC"
     },
     {
       "title": "Galpão Metálico",
       "description": "8.100m², 12m de altura.",
       "local": "Miritituba/PA",
-      "image": "/Fotos/Galeria/Miritituba-PA/Para(3).webp",
+      "image": "/Fotos/Galeria/Miritituba-PA/Miritituba_2.webp",
       "link": "Miritituba-PA"
     },
     {
       "title": "Obra Executada em Miritituba",
       "description": "5.400m² com 12m de altura, cobertura metálica galvanizada a fogo.",
       "local": "Miritituba/PA",
-      "image": "/Fotos/Galeria/Miritituba-PA/Para(4).webp",
+      "image": "/Fotos/Galeria/Miritituba-PA/Miritituba_3.webp",
       "link": "Miritituba-PA"
     }
   ];
