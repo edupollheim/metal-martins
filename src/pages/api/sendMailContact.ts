@@ -1,7 +1,16 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+interface EmailResponse {
+  message: string;
+  data?: any;
+  error?: any;
+}
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<EmailResponse>
+) {
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Método não permitido' });
   }
@@ -22,7 +31,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         },
         to: [
           {
-            email: "eduardo.pollheim@icloud.com", // E-mail de destino
+            email: 'eduardo.pollheim@icloud.com', // E-mail de destino
           },
         ],
         subject: 'Novo Contato via Site',
@@ -35,19 +44,25 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       },
       {
         headers: {
-          'accept': 'application/json',
+          accept: 'application/json',
           'api-key': process.env.BREVO_API_KEY as string,
           'content-type': 'application/json',
         },
       }
     );
 
-    return res.status(200).json({ message: 'E-mail enviado com sucesso!', data: response.data });
+    return res
+      .status(200)
+      .json({ message: 'E-mail enviado com sucesso!', data: response.data });
   } catch (error) {
-    console.error('Erro ao enviar e-mail:', error.response?.data || error.message);
-    return res.status(error.response?.status || 500).json({
+    const axiosError = error as AxiosError;
+    console.error(
+      'Erro ao enviar e-mail:',
+      axiosError.response?.data || axiosError.message
+    );
+    return res.status(axiosError.response?.status || 500).json({
       message: 'Erro ao enviar e-mail',
-      error: error.response?.data || error.message,
+      error: axiosError.response?.data || axiosError.message,
     });
   }
 }

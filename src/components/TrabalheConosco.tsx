@@ -15,15 +15,22 @@ export default function Careers() {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleChange = (e) => {
-    const { name, value, type, checked, files } = e.target;
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value, type, checked, files } = e.target as HTMLInputElement;
     setFormData({
       ...formData,
-      [name]: type === 'checkbox' ? checked : type === 'file' ? files[0] : value,
+      [name]:
+        type === 'checkbox'
+          ? checked
+          : type === 'file'
+          ? (files && files[0])
+          : value,
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
     setErrorMessage('');
@@ -34,7 +41,7 @@ export default function Careers() {
     formPayload.append('email', formData.email);
     formPayload.append('phone', formData.phone);
     formPayload.append('message', formData.message);
-    formPayload.append('resume', formData.resume);
+    formPayload.append('resume', formData.resume!);
 
     try {
       const response = await axios.post('/api/sendEmail', formPayload, {
@@ -64,15 +71,19 @@ export default function Careers() {
   return (
     <section id="trabalhe-conosco" className="py-20 bg-slate-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-slate-900">Trabalhe Conosco</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-slate-900">
+          Trabalhe Conosco
+        </h2>
         <div className="max-w-3xl mx-auto">
           {!isExpanded ? (
             <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-              <h3 className="text-2xl font-bold mb-4 text-slate-900">Junte-se à Nossa Equipe</h3>
+              <h3 className="text-2xl font-bold mb-4 text-slate-900">
+                Junte-se à Nossa Equipe
+              </h3>
               <p className="text-lg text-gray-700 mb-6">
-                Estamos sempre em busca de talentos para fazer parte da nossa equipe. 
-                Se você é apaixonado por construção e inovação, venha fazer parte da 
-                Metal Martins.
+                Estamos sempre em busca de talentos para fazer parte da nossa
+                equipe. Se você é apaixonado por construção e inovação, venha
+                fazer parte da Metal Martins.
               </p>
               <button
                 onClick={() => setIsExpanded(true)}
@@ -177,7 +188,8 @@ export default function Careers() {
                     className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                   />
                   <p className="ml-2 text-sm text-gray-500">
-                    Concordo com o tratamento dos meus dados pessoais conforme a LGPD.*
+                    Concordo com o tratamento dos meus dados pessoais conforme a
+                    LGPD.*
                   </p>
                 </div>
 

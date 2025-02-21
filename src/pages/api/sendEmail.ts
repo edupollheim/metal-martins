@@ -1,6 +1,6 @@
-// pages/api/sendEmail.js
+import type { NextApiRequest, NextApiResponse } from 'next';
 import axios from 'axios';
-import { IncomingForm } from 'formidable';
+import { IncomingForm, File as FormidableFile, Fields, Files } from 'formidable';
 import fs from 'fs';
 
 export const config = {
@@ -9,14 +9,14 @@ export const config = {
   },
 };
 
-export default async function handler(req, res) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Only POST requests allowed' });
   }
 
   const form = new IncomingForm();
   
-  form.parse(req, async (err, fields, files) => {
+  form.parse(req, async (err: any, fields: Fields, files: Files) => {
     if (err) {
       console.error('Erro ao processar o formulário:', err);
       return res.status(500).json({ message: 'Erro ao processar o formulário' });
@@ -24,35 +24,43 @@ export default async function handler(req, res) {
 
     console.log("Arquivos recebidos:", files);
 
-    const { name, email, phone, message } = fields;
-    const file = files.resume?.[0] || files.resume; // Garante compatibilidade
+    // Tipando os campos esperados
+    const { name, email, phone, message } = fields as {
+      name?: string;
+      email?: string;
+      phone?: string;
+      message?: string;
+    };
 
-    if (!name || !email || !phone || !message || !file) {
+    // Trata o campo "resume" que pode ser um array ou um único arquivo
+    const resumeFile = Array.isArray(files.resume)
+      ? files.resume[0]
+      : files.resume;
+
+    if (!name || !email || !phone || !message || !resumeFile) {
       return res.status(400).json({ message: 'Todos os campos são obrigatórios' });
     }
 
-    console.log("Arquivo selecionado:", file);
+    console.log("Arquivo selecionado:", resumeFile);
 
     try {
-      // Verifica se o arquivo possui um caminho válido
-      if (!file.filepath) {
+      if (!(resumeFile as FormidableFile).filepath) {
         throw new Error("O caminho do arquivo está indefinido.");
       }
 
-      // Ler o arquivo de currículo
+      const file = resumeFile as FormidableFile;
       const fileData = fs.readFileSync(file.filepath);
 
-      // Enviar e-mail via API do Brevo
       const response = await axios.post(
         'https://api.brevo.com/v3/smtp/email',
         {
           sender: {
             name: 'Metal Martins',
-            email: 'eduardo.h.pollheim@gmail.com', // Substitua pelo e-mail da empresa
+            email: 'eduardo.h.pollheim@gmail.com',
           },
           to: [
             {
-              email: 'eduardo.pollheim@gmail.com', // E-mail de destino
+              email: 'eduardo.pollheim@gmail.com',
             },
           ],
           subject: 'Nova Candidatura - Metal Martins',
@@ -66,25 +74,23 @@ export default async function handler(req, res) {
           `,
           attachment: [
             {
-              content: fileData.toString('base64'), // Converte o arquivo para base64
-              name: file.originalFilename || 'curriculo.pdf', // Nome do arquivo
+              content: fileData.toString('base64'),
+              name: file.originalFilename || 'curriculo.pdf',
             },
           ],
         },
         {
           headers: {
-            'accept': 'application/json',
+            accept: 'application/json',
             'api-key': process.env.BREVO_API_KEY,
             'content-type': 'application/json',
           },
         }
       );
 
-      // Excluir o arquivo temporário após o envio
       fs.unlinkSync(file.filepath);
-
       return res.status(200).json({ message: 'Candidatura enviada com sucesso!', data: response.data });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Erro ao enviar e-mail:', error.response?.data || error.message);
       return res.status(error.response?.status || 500).json({
         message: 'Erro ao enviar candidatura',
