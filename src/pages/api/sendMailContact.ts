@@ -31,7 +31,7 @@ export default async function handler(
         },
         to: [
           {
-            email: 'eduardo.pollheim@icloud.com', // E-mail de destino
+            email: 'contato@metalmartinsgalpoes.com.br', // E-mail de destino
           },
         ],
         subject: 'Novo Contato via Site',

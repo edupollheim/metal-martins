@@ -60,7 +60,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           },
           to: [
             {
-              email: 'eduardo.pollheim@gmail.com',
+              email: 'contato@metalmartinsgalpoes.com.br',
             },
           ],
           subject: 'Nova Candidatura - Metal Martins',
